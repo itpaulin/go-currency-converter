@@ -1,4 +1,3 @@
----
 
 # Currency Converter CLI 💰
 
