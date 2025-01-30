@@ -1,0 +1,54 @@
+
+
+# Diretórios de build e binários
+/bin/
+/build/
+/tmp/
+/out/
+/dist/
+
+# Cache do Go
+/pkg/
+/.cache/
+*.exe
+*.out
+*.o
+*.a
+*.so
+*.dll
+
+# Arquivos de depuração e logs
+*.log
+*.test
+*.prof
+*.trace
+
+# Arquivos de configuração locais
+.env
+.env.local
+*.envrc
+
+# Diretórios do IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cobertura de testes
+coverage.out
+coverage/
+
+# GoLand e outras configurações de IDE
+/.idea/
+*.iml
+*.ipr
+*.iws
+
+# Docker e CI/CD
+docker-compose.override.yml
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Git hooks
+.husky/
