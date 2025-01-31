@@ -2,17 +2,15 @@ package api
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"log"
 	"net/http"
 )
 
-func GetRates()  {
+func GetRates() map[string]interface{}{
 	endpoint := API_URL + "latest.json?app_id=" + APP_ID
 
 	response, err := http.Get(endpoint)
-
 	if err != nil {
 		log.Fatalf("Occured an error: %s\n", err)
 	}
@@ -25,6 +23,7 @@ func GetRates()  {
 	}
 
 	var data map[string]interface{}
+
 	errJsonParse := json.Unmarshal(body, &data)
 	if errJsonParse != nil {
 		log.Fatalf("Occured an error when decoding JSON: %s\n", errJsonParse)
@@ -33,8 +32,6 @@ func GetRates()  {
 	//TODO pick specific rates from the data
 	rates := data["rates"].(map[string]interface{})
 
-	fmt.Println(rates["BRL"])
-	
-
+	return rates
 
 }
